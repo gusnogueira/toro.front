@@ -1,43 +1,47 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { IInvestment } from "../../../Interfaces/interfaces";
 import InvestmentItem from "../components/InvestmentItem";
 import MainInvestmentCard from "../components/MainInvestmentCard";
+import { getUserPosition } from "../repositories/userPositionRepository";
 
 import { MainInvestmentsContainer, InvestmentsContainer } from "./styles";
 
 const Dashboard: React.FC = () => {
-  const investments: IInvestment[] = [
-    {
-      ticker: "GOAU4F",
-      amount: 1,
-      currentPrice: 10,
-      averageCost: 10,
-      result: 10,
-      totalCost: 10
-    },
-    {
-      ticker: "GOAU4F",
-      amount: 1,
-      currentPrice: 10,
-      averageCost: 10,
-      result: 10,
-      totalCost: 10
-    },
-    {
-      ticker: "GOAU4F",
-      amount: 1,
-      currentPrice: 10,
-      averageCost: 10,
-      result: 10,
-      totalCost: 10
+  const [investments, setInvestments] = useState<IInvestment[]>([]);
+  const [mainInvestment, setMainInvestment] = useState<IInvestment>();
+  const [higherProfit, setHigherProfit] = useState<IInvestment>();
+  const [greaterDamage, setGreaterDamage] = useState<IInvestment>();
+
+  useEffect(() => {
+    const apiReturn = getUserPosition();
+    if (apiReturn) {
+      setInvestments(apiReturn.positions);
+      setMainInvestment(
+        apiReturn.positions.reduce(function (prev, current) {
+          return prev.amount * prev.averageCost > current.amount * current.averageCost
+            ? prev
+            : current;
+        })
+      );
+      setHigherProfit(
+        apiReturn.positions.reduce(function (prev, current) {
+          return prev.result > current.result ? prev : current;
+        })
+      );
+      setGreaterDamage(
+        apiReturn.positions.reduce(function (prev, current) {
+          return prev.result < current.result ? prev : current;
+        })
+      );
     }
-  ];
+  }, []);
+
   return (
     <>
       <MainInvestmentsContainer>
-        <MainInvestmentCard investment={investments[0]} title="Investimento Principal" />
-        <MainInvestmentCard investment={investments[1]} title="Maior Lucro" />
-        <MainInvestmentCard investment={investments[2]} title="Maior Prejuízo" />
+        <MainInvestmentCard investment={mainInvestment} title="Investimento Principal" />
+        <MainInvestmentCard investment={higherProfit} title="Maior Lucro" />
+        <MainInvestmentCard investment={greaterDamage} title="Maior Prejuízo" />
       </MainInvestmentsContainer>
       <h3 style={{ marginTop: "20px" }}>Listagem de Ativos</h3>
       <InvestmentsContainer>
