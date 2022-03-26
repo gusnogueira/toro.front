@@ -29,6 +29,8 @@ const theme = {
     spacing9: "128px"
   },
   fontSize: {
+    title1: "24px",
+    title2: "20px",
     body1: "16px",
     body2: "14px",
     body3: "12px",

@@ -31,6 +31,8 @@ declare module "styled-components" {
       spacing9: string;
     };
     fontSize: {
+      title1: string;
+      title2: string;
       body1: string;
       body2: string;
       body3: string;

@@ -7,4 +7,9 @@ export const Container = styled.div`
 
 export const Conteudo = styled.div`
   padding: ${props => props.theme.spacing.spacing5};
+  @media (max-width: 425px) {
+    padding-left: ${props => props.theme.spacing.spacing3};
+    padding-right: ${props => props.theme.spacing.spacing3};
+    padding-top: 0;
+  }
 `;
