@@ -1,9 +1,10 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import Dashboard from "../pages/Dashboard/views";
 
 const Router: React.FC = () => (
   <Routes>
-    <Route path={"*"} element={<h1>teste</h1>} />
+    <Route path={"*"} element={<Dashboard />} />
   </Routes>
 );
 
