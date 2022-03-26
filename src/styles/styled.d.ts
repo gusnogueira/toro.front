@@ -33,8 +33,8 @@ declare module "styled-components" {
     fontSize: {
       body1: string;
       body2: string;
-      label1: string;
-      label2: string;
+      body3: string;
+      body4: string;
     };
     fontWeight: {
       bold: number;

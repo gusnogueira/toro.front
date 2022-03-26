@@ -22,7 +22,7 @@ export const LogoImg = styled.img`
 `;
 
 export const Icon = styled.img`
-  width: 22px;
+  width: 18px;
   margin-right: ${props => props.theme.spacing.spacing2};
   margin-top: ${props => props.theme.spacing.spacing2};
   @media (max-width: 425px) {
@@ -42,16 +42,16 @@ export const LabelValue = styled.span`
   font-size: ${props => props.theme.fontSize.body2};
   color: ${props => props.theme.colors.primary.dark};
   @media (max-width: 425px) {
-    font-size: ${props => props.theme.fontSize.label2};
+    font-size: ${props => props.theme.fontSize.body4};
   }
 `;
 
 export const Value = styled.span`
-  font-size: ${props => props.theme.fontSize.body1};
+  font-size: ${props => props.theme.fontSize.body2};
   color: ${props => props.theme.colors.primary.dark};
   font-weight: ${props => props.theme.fontWeight.extraBold};
   @media (max-width: 425px) {
-    font-size: ${props => props.theme.fontSize.label2};
+    font-size: ${props => props.theme.fontSize.body4};
   }
 `;
 

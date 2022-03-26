@@ -31,8 +31,8 @@ const theme = {
   fontSize: {
     body1: "16px",
     body2: "14px",
-    label1: "12px",
-    label2: "10px"
+    body3: "12px",
+    body4: "10px"
   },
   fontWeight: {
     bold: 600,
