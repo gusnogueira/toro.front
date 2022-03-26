@@ -19,5 +19,26 @@ declare module "styled-components" {
       white: string;
       background: string;
     };
+    spacing: {
+      spacing1: string;
+      spacing2: string;
+      spacing3: string;
+      spacing4: string;
+      spacing5: string;
+      spacing6: string;
+      spacing7: string;
+      spacing8: string;
+      spacing9: string;
+    };
+    fontSize: {
+      body1: string;
+      body2: string;
+      label1: string;
+      label2: string;
+    };
+    fontWeight: {
+      bold: number;
+      extraBold: number;
+    };
   }
 }
