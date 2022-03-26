@@ -10,6 +10,7 @@ export const MainInvestmentsContainer = styled.div`
 `;
 
 export const InvestmentsContainer = styled.div`
+  margin-top: ${props => props.theme.spacing.spacing3};
   display: flex;
-  height: 200px;
+  flex-direction: column;
 `;

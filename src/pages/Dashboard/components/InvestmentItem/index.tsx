@@ -1,12 +1,25 @@
 import React from "react";
 
-import { MainInvestmentsContainer, InvestmentsContainer } from "./styles";
+import { Card, Ticker, Data } from "./styles";
 
 const InvestmentItem: React.FC = () => {
   return (
     <>
-      <MainInvestmentsContainer></MainInvestmentsContainer>
-      <InvestmentsContainer></InvestmentsContainer>
+      <Card>
+        <Ticker>GOAU4F</Ticker>
+        <Data>
+          Quantidade: <b>01</b>
+        </Data>
+        <Data>
+          Preço atual: <b>R$10,00</b>
+        </Data>
+        <Data>
+          Custo médio: <b>R$10,00</b>
+        </Data>
+        <Data>
+          Lucro/Prejuízo: <b>R$10,00</b>
+        </Data>
+      </Card>
     </>
   );
 };

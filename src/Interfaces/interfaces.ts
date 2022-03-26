@@ -4,4 +4,11 @@ export interface IInvestment {
   currentPrice: number;
   averageCost: number;
   result: number;
+  totalCost: number;
+}
+
+export interface IUserPosition {
+  checkingAccountAmount: number;
+  positions: IInvestment[];
+  consolidated: number;
 }
