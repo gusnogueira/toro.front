@@ -12,9 +12,15 @@ const MainInvestmentCard: React.FC<IMainInvestmentCardProps> = props => {
           <LeftContainer>
             <Label>{props.title}</Label>
             <Title>{props.investment.ticker}</Title>
-            <Data>Quantidade: {props.investment.amount}</Data>
-            <Data>Preço atual: {numberToCurrency(props.investment.currentPrice)}</Data>
-            <Data>Custo médio: {numberToCurrency(props.investment.averageCost)}</Data>
+            <Data>
+              Quantidade: <b>{props.investment.amount}</b>
+            </Data>
+            <Data>
+              Preço atual: <b>{numberToCurrency(props.investment.currentPrice)}</b>
+            </Data>
+            <Data>
+              Custo médio: <b>{numberToCurrency(props.investment.averageCost)}</b>
+            </Data>
           </LeftContainer>
           <RightContainer>
             <Title>{numberToCurrency(props.investment.result)}</Title>
