@@ -1,4 +1,4 @@
-import { IUserPosition } from "../../../Interfaces/interfaces";
+import { IUserPosition } from "../Interfaces/interfaces";
 
 const userPosition: IUserPosition = {
   checkingAccountAmount: 120,

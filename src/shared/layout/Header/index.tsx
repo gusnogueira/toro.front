@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
 import {
   Container,
@@ -15,8 +15,11 @@ import {
 import imgLogo from "../../../assets/logoToroInvestimentos.svg";
 import showIcon from "../../../assets/showIcon.svg";
 import hideIcon from "../../../assets/hideIcon.svg";
+import { UserProfileContext } from "../../../providers/userProfile";
+import { numberToCurrency } from "../../util/functions";
 
 const Header: React.FC = () => {
+  const userProfile = useContext(UserProfileContext);
   const [showBalance, setShowBalance] = useState(true);
   const [showPatrimony, setShowPatrimony] = useState(true);
 
@@ -30,14 +33,14 @@ const Header: React.FC = () => {
           </LinkButton>
           <ValueContainer>
             <LabelValue>Saldo:</LabelValue>
-            <Value>{showBalance ? "R$ 258.000,00" : "-"}</Value>
+            <Value>{showBalance ? numberToCurrency(userProfile.checkingAccountAmount) : "-"}</Value>
           </ValueContainer>
           <LinkButton onClick={() => setShowPatrimony(!showPatrimony)}>
             <Icon src={showPatrimony ? hideIcon : showIcon} />
           </LinkButton>
           <ValueContainer>
             <LabelValue>Patrimônio:</LabelValue>
-            <Value>{showPatrimony ? "R$ 258.000,00" : "-"}</Value>
+            <Value>{showPatrimony ? numberToCurrency(userProfile.consolidated) : "-"}</Value>
           </ValueContainer>
         </RigthContainer>
       </Conteudo>

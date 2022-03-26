@@ -4,16 +4,19 @@ import Theme from "./styles/theme";
 import GlobalStyles from "./styles/GlobalStyles";
 import Router from "./routes/Router";
 import Layout from "./shared/layout/Layout";
+import { UserProfileProvider } from "./providers/userProfile";
 
 function App() {
   return (
     <BrowserRouter basename="/">
-      <ThemeProvider theme={Theme}>
-        <GlobalStyles />
-        <Layout>
-          <Router />
-        </Layout>
-      </ThemeProvider>
+      <UserProfileProvider>
+        <ThemeProvider theme={Theme}>
+          <GlobalStyles />
+          <Layout>
+            <Router />
+          </Layout>
+        </ThemeProvider>
+      </UserProfileProvider>
     </BrowserRouter>
   );
 }
