@@ -6,7 +6,7 @@ import MainInvestmentCard from "../components/MainInvestmentCard";
 import { MainInvestmentsContainer, InvestmentsContainer } from "./styles";
 
 const Dashboard: React.FC = () => {
-  const mainInvestments: IInvestment[] = [
+  const investments: IInvestment[] = [
     {
       ticker: "GOAU4F",
       amount: 1,
@@ -35,16 +35,15 @@ const Dashboard: React.FC = () => {
   return (
     <>
       <MainInvestmentsContainer>
-        <MainInvestmentCard investment={mainInvestments[0]} title="Investimento Principal" />
-        <MainInvestmentCard investment={mainInvestments[1]} title="Maior Lucro" />
-        <MainInvestmentCard investment={mainInvestments[2]} title="Maior Prejuízo" />
+        <MainInvestmentCard investment={investments[0]} title="Investimento Principal" />
+        <MainInvestmentCard investment={investments[1]} title="Maior Lucro" />
+        <MainInvestmentCard investment={investments[2]} title="Maior Prejuízo" />
       </MainInvestmentsContainer>
       <h3 style={{ marginTop: "20px" }}>Listagem de Ativos</h3>
       <InvestmentsContainer>
-        <InvestmentItem />
-        <InvestmentItem />
-        <InvestmentItem />
-        <InvestmentItem />
+        {investments.map(investment => (
+          <InvestmentItem investment={investment} />
+        ))}
       </InvestmentsContainer>
     </>
   );

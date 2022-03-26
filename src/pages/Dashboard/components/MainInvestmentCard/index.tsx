@@ -1,10 +1,10 @@
 import React from "react";
 import { numberToCurrency } from "../../../../shared/util/functions";
-import { IMainInvestmentCard } from "./interfaces";
+import { IMainInvestmentCardProps } from "./interfaces";
 
 import { Card, Title, Label, Data, LeftContainer, RightContainer, Conteudo } from "./styles";
 
-const MainInvestmentCard: React.FC<IMainInvestmentCard> = props => {
+const MainInvestmentCard: React.FC<IMainInvestmentCardProps> = props => {
   return (
     <>
       <Card>

@@ -60,7 +60,7 @@ export const RigthContainer = styled.div`
   justify-content: space-between;
   width: 30%;
   @media (max-width: 425px) {
-    width: 65%;
+    width: 50%;
   }
 `;
 

@@ -1,6 +1,6 @@
 import { IInvestment } from "../../../../Interfaces/interfaces";
 
-export interface IMainInvestmentCard {
+export interface IMainInvestmentCardProps {
   investment: IInvestment;
   title: string;
 }

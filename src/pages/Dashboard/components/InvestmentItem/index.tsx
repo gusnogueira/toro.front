@@ -1,23 +1,25 @@
 import React from "react";
+import { numberToCurrency } from "../../../../shared/util/functions";
+import { IInvestmentItemProps } from "./interfaces";
 
 import { Card, Ticker, Data } from "./styles";
 
-const InvestmentItem: React.FC = () => {
+const InvestmentItem: React.FC<IInvestmentItemProps> = props => {
   return (
     <>
       <Card>
-        <Ticker>GOAU4F</Ticker>
+        <Ticker>{props.investment.ticker}</Ticker>
         <Data>
-          Quantidade: <b>01</b>
+          Quantidade: <b>{props.investment.amount}</b>
         </Data>
         <Data>
-          Preço atual: <b>R$10,00</b>
+          Preço atual: <b>{numberToCurrency(props.investment.currentPrice)}</b>
         </Data>
         <Data>
-          Custo médio: <b>R$10,00</b>
+          Custo médio: <b>{numberToCurrency(props.investment.averageCost)}</b>
         </Data>
         <Data>
-          Lucro/Prejuízo: <b>R$10,00</b>
+          Lucro/Prejuízo: <b>{numberToCurrency(props.investment.result)}</b>
         </Data>
       </Card>
     </>
