@@ -22,8 +22,8 @@ export const UserPositionProvider = (props: any) => {
   const getPosition = useCallback(async () => {
     const result = await getUserPosition()
       .then(resposta => resposta && resposta.data)
-      .catch(erro => erro);
-    setUserPosition(result);
+      .catch(erro => console.log(erro));
+    result && setUserPosition(result);
     return result;
   }, []);
 
@@ -32,7 +32,7 @@ export const UserPositionProvider = (props: any) => {
   }, [getPosition]);
 
   return (
-    <UserPositionContext.Provider value={userPosition}>
+    <UserPositionContext.Provider value={userPosition ? userPosition : getUserPositionEmpty()}>
       {props.children}
     </UserPositionContext.Provider>
   );
