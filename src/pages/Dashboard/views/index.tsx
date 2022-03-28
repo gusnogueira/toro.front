@@ -4,17 +4,17 @@ import InvestmentItem from "../components/InvestmentItem";
 import MainInvestmentCard from "../components/MainInvestmentCard";
 
 import { MainInvestmentsContainer, InvestmentsContainer } from "./styles";
-import { UserProfileContext } from "../../../providers/userProfile";
+import { UserPositionContext } from "../../../providers/userPositionProvider";
 
 const Dashboard: React.FC = () => {
-  const userProfile = useContext(UserProfileContext);
+  const userProfile = useContext(UserPositionContext);
   const [investments, setInvestments] = useState<IInvestment[]>([]);
   const [mainInvestment, setMainInvestment] = useState<IInvestment>();
   const [higherProfit, setHigherProfit] = useState<IInvestment>();
   const [greaterDamage, setGreaterDamage] = useState<IInvestment>();
 
   useEffect(() => {
-    if (userProfile) {
+    if (userProfile.positions.length > 0) {
       setInvestments(userProfile.positions);
       setMainInvestment(
         userProfile.positions.reduce(function (prev, current) {

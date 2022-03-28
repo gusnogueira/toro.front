@@ -15,11 +15,11 @@ import {
 import imgLogo from "../../../assets/logoToroInvestimentos.svg";
 import showIcon from "../../../assets/showIcon.svg";
 import hideIcon from "../../../assets/hideIcon.svg";
-import { UserProfileContext } from "../../../providers/userProfile";
+import { UserPositionContext } from "../../../providers/userPositionProvider";
 import { numberToCurrency } from "../../util/functions";
 
 const Header: React.FC = () => {
-  const userProfile = useContext(UserProfileContext);
+  const userProfile = useContext(UserPositionContext);
   const [showBalance, setShowBalance] = useState(true);
   const [showPatrimony, setShowPatrimony] = useState(true);
 

@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { ThemeProvider } from "styled-components";
 import Header from ".";
 import { IUserPosition } from "../../../Interfaces/interfaces";
-import { UserProfileContext } from "../../../providers/userProfile";
+import { UserPositionContext } from "../../../providers/userPositionProvider";
 import Theme from "../../../styles/theme";
 
 describe("Teste do componente <Header />", () => {
@@ -24,11 +24,11 @@ describe("Teste do componente <Header />", () => {
 
   test("Saldo deve estar na tela", async () => {
     render(
-      <UserProfileContext.Provider value={mockUserProfile}>
+      <UserPositionContext.Provider value={mockUserProfile}>
         <ThemeProvider theme={Theme}>
           <Header />
         </ThemeProvider>
-      </UserProfileContext.Provider>
+      </UserPositionContext.Provider>
     );
 
     expect(screen.getByText("Saldo:", { exact: true })).toBeInTheDocument();
@@ -39,11 +39,11 @@ describe("Teste do componente <Header />", () => {
 
   test("Patrimonio deve estar na tela", async () => {
     render(
-      <UserProfileContext.Provider value={mockUserProfile}>
+      <UserPositionContext.Provider value={mockUserProfile}>
         <ThemeProvider theme={Theme}>
           <Header />
         </ThemeProvider>
-      </UserProfileContext.Provider>
+      </UserPositionContext.Provider>
     );
 
     expect(screen.getByText("Patrimônio:", { exact: true })).toBeInTheDocument();
@@ -52,11 +52,11 @@ describe("Teste do componente <Header />", () => {
 
   test("Botões de ocultar devem estar na tela", async () => {
     render(
-      <UserProfileContext.Provider value={mockUserProfile}>
+      <UserPositionContext.Provider value={mockUserProfile}>
         <ThemeProvider theme={Theme}>
           <Header />
         </ThemeProvider>
-      </UserProfileContext.Provider>
+      </UserPositionContext.Provider>
     );
 
     const buttons = screen.queryAllByRole("button");
@@ -65,11 +65,11 @@ describe("Teste do componente <Header />", () => {
 
   test("Saldo deve ser ocultado conforme clique no botao de ocultar", async () => {
     render(
-      <UserProfileContext.Provider value={mockUserProfile}>
+      <UserPositionContext.Provider value={mockUserProfile}>
         <ThemeProvider theme={Theme}>
           <Header />
         </ThemeProvider>
-      </UserProfileContext.Provider>
+      </UserPositionContext.Provider>
     );
 
     const buttons = screen.queryAllByRole("button");
@@ -91,11 +91,11 @@ describe("Teste do componente <Header />", () => {
 
   test("Patrimônio deve ser ocultado conforme clique no botao de ocultar", async () => {
     render(
-      <UserProfileContext.Provider value={mockUserProfile}>
+      <UserPositionContext.Provider value={mockUserProfile}>
         <ThemeProvider theme={Theme}>
           <Header />
         </ThemeProvider>
-      </UserProfileContext.Provider>
+      </UserPositionContext.Provider>
     );
 
     const buttons = screen.queryAllByRole("button");
