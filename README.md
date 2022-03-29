@@ -12,7 +12,7 @@
 #### Para o desenvolvimento deste projeto foi usado React.JS em conjunto com TypeScript, Styled Components para estilização, Context API para gerenciamento de estado,  React Testing Library com Jest para os testes, e Axios para a comunicação com o back-end.
 
 ## Utilização:
-#### Para executar o projeto é necessário clonar este repositório e em seguida navegar até a pasta e por último usar o comando npm install para instalar as dependências.
+#### Para executar o projeto é necessário clonar este repositório e em seguida navegar até a pasta, e por último usar o comando npm install para instalar as dependências. Instaladas as dependências, basta executar o comando npm start ainda no diretório do projeto.
 #### Para a execução dos testes basta navegar até o diretório do projeto e executar o comando npm test e em seguida apertar a tecla "a" para executar todos os testes.
 #### Para que haja a conexão entre back e front, atenção à URL base disponível no arquivo AxiosInstance.ts localizado em src > shared > util.
 
