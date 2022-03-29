@@ -3,7 +3,7 @@
 </p>
 
 ## Este é o desafio feito para o processo seletivo da Toro Investimentos
-#### O projeto consiste basicamente em um dashboard de exibição de investimentos onde o usuário pode verificar e ocultar seus valores de saldo e patrimônio, além de conferir uma listagem dos ativos que compõem sua carteira. Além da listagem de investimentos, também tomei a liberdade de inserir três cards mostrando:
+#### O projeto consiste basicamente em um dashboard de exibição de investimentos onde o usuário pode verificar e ocultar seus valores de saldo e patrimônio, além de conferir uma listagem dos ativos que compõem sua carteira. Além do que estava proposto no desafio, tentei também aplicar um pouco de responsividade e também tomei a liberdade de inserir três cards adicionais mostrando:
 #### - Investimento Principal (Investimento de maior representatividade na carteira);
 #### - Investimento de maior lucro;
 #### - Investimento de maior prejuízo;
