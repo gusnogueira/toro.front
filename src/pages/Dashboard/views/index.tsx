@@ -3,7 +3,7 @@ import { IInvestment } from "../../../Interfaces/interfaces";
 import InvestmentItem from "../components/InvestmentItem";
 import MainInvestmentCard from "../components/MainInvestmentCard";
 
-import { MainInvestmentsContainer, InvestmentsContainer } from "./styles";
+import { MainInvestmentsContainer, InvestmentsContainer, TitleInvestments } from "./styles";
 import { UserPositionContext } from "../../../providers/userPositionProvider";
 
 const Dashboard: React.FC = () => {
@@ -43,7 +43,7 @@ const Dashboard: React.FC = () => {
         <MainInvestmentCard investment={higherProfit} title="Maior Lucro" />
         <MainInvestmentCard investment={greaterDamage} title="Maior Prejuízo" />
       </MainInvestmentsContainer>
-      <h3 style={{ marginTop: "20px" }}>Listagem de Ativos</h3>
+      <TitleInvestments>Listagem de Ativos</TitleInvestments>
       <InvestmentsContainer>
         {investments.map(investment => (
           <InvestmentItem investment={investment} />
