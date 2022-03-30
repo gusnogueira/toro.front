@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { IUserPosition } from "../Interfaces/interfaces";
 import { getUserPosition } from "../repositories/userPositionRepository";
 
@@ -19,17 +19,17 @@ const getUserPositionEmpty = (): IUserPosition => {
 export const UserPositionProvider = (props: any) => {
   const [userPosition, setUserPosition] = useState<IUserPosition>(getUserPositionEmpty());
 
-  const getPosition = useCallback(async () => {
+  const getPosition = async () => {
     const result = await getUserPosition()
       .then(resposta => resposta && resposta.data)
       .catch(erro => console.log(erro));
     result && setUserPosition(result);
     return result;
-  }, []);
+  };
 
   useEffect(() => {
     getPosition();
-  }, [getPosition]);
+  }, []);
 
   return (
     <UserPositionContext.Provider value={userPosition ? userPosition : getUserPositionEmpty()}>
